@@ -23,7 +23,7 @@ const PORT = process.env.PORT || 5500;
 //CORS setup (API routes)
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://your-production-frontend.com"
+  "https://retail-awjh14542-aribas-projects-e08eb7cd.vercel.app"
 ];
 
 app.use(cors({
