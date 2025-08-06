@@ -28,11 +28,21 @@ const allowedOrigins = [
 
 app.use(cors({
   origin: allowedOrigins,
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true, // Allows cookies to be sent
 }));
 
 app.use(express.json());
+
+// Add this after app.use(cors(...)) and before routes
+app.options('*', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "https://retail-henna.vercel.app");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.sendStatus(204); // No content for preflight
+});
+
 
 // Webhook
 app.post('/api/sheet-update', async (req, res) => {
