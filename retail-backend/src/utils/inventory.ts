@@ -4,7 +4,7 @@ import path from "path";
 import dayjs from "dayjs";
 import { Response } from "express";
 import { AuthRequest } from "../middleware/authMiddleware";
-import { io } from "../server"; //  Your Socket.IO instance
+import { io } from "../server"; 
 import { Inventory } from "../models/Inventory";
 
 //  Fetch sheet metadata (tab names)
