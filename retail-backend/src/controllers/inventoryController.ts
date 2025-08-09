@@ -8,7 +8,7 @@ import { JWT } from "google-auth-library";
 import path from "path";
 import dayjs from "dayjs";
 import isoWeek from "dayjs/plugin/isoWeek";
-import { io } from "../server"; // ✅ Socket.IO instance
+import { io } from "../server"; // Socket.IO instance
 import cron from "node-cron";
 import { v4 as uuidv4 } from "uuid";
 import { createStockNotification } from "../utils/lowstocknotification";
@@ -296,7 +296,7 @@ export const getInventoryInsights = async (req: AuthRequest, res: Response) => {
         fetchSheet("social_media_metrics"),
         fetchSheet("leads"),
         fetchSheet("lead_products"),
-        fetchSheet("suppliers"), // renamed from procurements
+        fetchSheet("suppliers"), 
       ]);
 
     if (!products.length || !sales.length) {

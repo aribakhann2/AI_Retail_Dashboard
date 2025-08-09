@@ -54,12 +54,14 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     );
 
     //  Set JWT as HttpOnly cookie
-    res.cookie("token", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
-      maxAge: 24 * 60 * 60 * 1000, // 1 day
-    });
+  
+      res.cookie("token", token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production", // HTTPS only in prod
+        sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // None in prod, lax in local
+        maxAge: 24 * 60 * 60 * 1000,
+      });
+      
 
     res.json({
       message: "Login successful",

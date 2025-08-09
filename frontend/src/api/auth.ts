@@ -24,10 +24,16 @@ export const authenticateUser = async (
   userData: LoginData | SignupData
 ): Promise<AuthResponse> => {
   const endpoint = isLogin ? "/auth/login" : "/auth/register";
-  const { data } = await api.post(endpoint, userData);
+  const { data } = await api.post(
+    endpoint,
+    userData,
+    {
+      // if you need to send cookies:
+      withCredentials: true,
+    }
+  );
   return data;
 };
-
 //  Logout User
 export const logoutUser = async (): Promise<void> => {
 

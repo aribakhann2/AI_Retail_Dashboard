@@ -6,7 +6,6 @@ import cookieParser from "cookie-parser";
 import path from "path";
 import bodyParser from "body-parser";
 import { Server } from "socket.io";
-
 import connectDB from "./config/db";
 import userRoute from "./routes/authRoutes";
 import inventoryRoute from "./routes/inventoryRoute";
@@ -22,11 +21,9 @@ const app = express();
 const PORT = process.env.PORT || 5500;
 
 // Middleware
-app.use(bodyParser.json());
-app.use(cookieParser());
-app.use(express.json());
 
-// ✅ CORS: Allow ONLY frontend React at 5173
+
+// CORS: Allow ONLY frontend React at 5173
 const allowedOrigins = [
   "http://localhost:5173",                  // Dev frontend
   "https://retail-frontend-ten.vercel.app", // Prod frontend
@@ -44,8 +41,10 @@ app.use(cors({
   allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization"],
   credentials: true,
 }));
-
-// ✅ Handle OPTIONS (preflight) for allowed origin
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(express.json());
+//  Handle OPTIONS (preflight) for allowed origin
 app.options("*", (req, res) => {
   const origin = req.headers.origin;
   if (origin && allowedOrigins.includes(origin)) {
@@ -88,7 +87,7 @@ app.use('/notify', notificationRouter);
 // Create HTTP Server
 const server = http.createServer(app);
 
-// ✅ Socket.IO restricted to React frontend
+// Socket.IO restricted to React frontend
 export const io = new Server(server, {
   cors: {
     origin: allowedOrigins,
@@ -107,7 +106,7 @@ io.on("connection", (socket) => {
 
 // Connect DB and start server
 connectDB().then(() => {
-  server.listen(PORT, () => console.log(`✅ Server running at http://localhost:${PORT}`));
+  server.listen(PORT, () => console.log(` Server running at http://localhost:${PORT}`));
 });
 
 export { app };
