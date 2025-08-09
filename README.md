@@ -36,57 +36,40 @@ Below is a complete walkthrough of the application — from connecting your Goog
 
 ---
 
-### 1️⃣ Dashboard Overview  
+### Dashboard Overview  
 Your main control center — **real-time inventory**, sales summaries, and quick access to forecasting.  
 
-![Dashboard](./screenshots)
+![Dashboard](./screenshots/Screenshot (155).png
 
 ---
 
-### 2️⃣ Google Sheets Connection  
+### Google Sheets Connection  
 Easily connect your **Google Sheet** containing these tabs:  
 `sales`, `clients`, `supplier`, `lead`, `products`.  
 Our backend uses the Google Sheets API to sync data instantly.  
 
-![Google Sheets](./screenshots/google_sheets_connection.png)
+![Google Sheets](./screenshots/Screenshot (154).png)
 
 ---
 
-### 3️⃣ Inventory Updates in Real-Time  
-Change stock levels right from the interface.  
-Updated values sync with your Google Sheet instantly — and everyone gets notified.  
 
-![Stock Update](./screenshots/stock_update.png)
-
----
-
-### 4️⃣ Notifications System  
+### Notifications System  
 Get **instant alerts** when inventory is updated or when new insights are generated.  
 
-![Notifications](./screenshots/notifications.png)
+![Notifications](./screenshots/Screenshot (153).png)
 
 ---
 
-### 5️⃣ Forecast Type Selection  
+### Forecast Type Selection  
 Choose the type of forecast you need.  
 The **sales tab** from Google Sheets is automatically exported as a CSV and sent to our **Flask AI API**.  
 
-![Forecast Selection](./screenshots/forecast_selection.png)
+![Forecast Selection](./screenshots/Screenshot (152).png)
 
----
 
-### 6️⃣ AI-Generated PDF Reports  
-The Flask API processes your sales data and generates a detailed PDF report — including metrics, graphs, and demand forecasts.  
-Reports are stored in the `screenshots` folder for reference.  
+## Dark Mode  
 
-![Forecast Report](./screenshots/forecast_report.png)
-
----
-
-### 7️⃣ Responsive Design  
-The dashboard adapts to **desktop, tablet, and mobile** so you can manage your business on the go.  
-
-![Responsive Design](./screenshots/responsive_design.png)
+![Dark Mode](./screenshots/Screenshot (158).png)
 
 ---
 
