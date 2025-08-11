@@ -39,7 +39,7 @@ Below is a complete walkthrough of the application — from connecting your Goog
 ### Dashboard Overview  
 Your main control center — **real-time inventory**, sales summaries, and quick access to forecasting.  
 
-![Dashboard](./screenshots/dashboard.png
+![Dashboard](./screenshots/dashboard.png)
 
 ---
 
