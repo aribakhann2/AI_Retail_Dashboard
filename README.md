@@ -39,7 +39,7 @@ Below is a complete walkthrough of the application — from connecting your Goog
 ### Dashboard Overview  
 Your main control center — **real-time inventory**, sales summaries, and quick access to forecasting.  
 
-![Dashboard](./screenshots/Screenshot (155).png
+![Dashboard](./screenshots/dashboard.png
 
 ---
 
@@ -48,7 +48,7 @@ Easily connect your **Google Sheet** containing these tabs:
 `sales`, `clients`, `supplier`, `lead`, `products`.  
 Our backend uses the Google Sheets API to sync data instantly.  
 
-![Google Sheets](./screenshots/Screenshot (154).png)
+![Google Sheets](./screenshots/inventory.png)
 
 ---
 
@@ -56,7 +56,7 @@ Our backend uses the Google Sheets API to sync data instantly.
 ### Notifications System  
 Get **instant alerts** when inventory is updated or when new insights are generated.  
 
-![Notifications](./screenshots/Screenshot (153).png)
+![Notifications](./screenshots/notifications.png)
 
 ---
 
@@ -64,12 +64,12 @@ Get **instant alerts** when inventory is updated or when new insights are genera
 Choose the type of forecast you need.  
 The **sales tab** from Google Sheets is automatically exported as a CSV and sent to our **Flask AI API**.  
 
-![Forecast Selection](./screenshots/Screenshot (152).png)
+![Forecast Selection](./screenshots/forecast.png)
 
 
 ## Dark Mode  
 
-![Dark Mode](./screenshots/Screenshot (158).png)
+![Dark Mode](./screenshots/darkmode.png)
 
 ---
 
